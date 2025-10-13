@@ -50,7 +50,6 @@ void draw_vmu_icon(void) {
 		vmu_draw_lcd(vmudev, owl2_bits);
 }
 
-//static dirent_t __attribute__((aligned(32))) FileState[200];
 int vmu_check(void) {
 	maple_device_t *vmudev = NULL;
 
@@ -69,16 +68,12 @@ int vmu_check(void) {
 
 	Pak_Memory = 200;
 
-	//memset(FileState, 0, sizeof(dirent_t)*200);
-
-	int FileCount = 0;
 	while (NULL != (de = fs_readdir(d))) {
 		if (strcmp(de->name, ".") == 0)
 			continue;
 		if (strcmp(de->name, "..") == 0)
 			continue;
 
-		//memcpy(&FileState[FileCount++], de, sizeof(dirent_t));			
 		Pak_Memory -= (de->size / 512);
 	}
 

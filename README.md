@@ -25,7 +25,7 @@ VMU save/load for settings and high scores (6 blocks required), full input remap
 ## Download the disc image:
 
 ***
-Go to the `Releases` section of the Github repo. A `7z` file is provided with `CDI`.
+Go to the `Releases` section of the Github repo. A `tgz` file is provided with `CDI` and some cover art in various formats.
 
 https://github.com/jnmartin84/wipeout-dc/releases/tag/v2.9
 
