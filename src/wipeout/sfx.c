@@ -13,6 +13,53 @@ extern int sfx_from_menu;
 
 void sfx_update_ex(sfx_t *sfx);
 
+#include "dc/sound/aica_comm.h"
+extern int snd_sh4_to_aica(void *packet, uint32_t size);
+struct snd_effect;
+typedef struct snd_effect
+{
+	uint32_t locl, locr;
+	uint32_t len;
+	uint32_t rate;
+	uint32_t used;
+	uint32_t fmt;
+	uint16_t stereo;
+
+	LIST_ENTRY(snd_effect)
+	list;
+} snd_effect_t;
+
+void snd_sfx_update_ex(sfx_play_data_t *data)
+{
+	int size;
+	snd_effect_t *t = (snd_effect_t *)data->idx;
+	AICA_CMDSTR_CHANNEL(tmp, cmd, chan);
+
+	size = t->len;
+
+	if (size >= 65535)
+		size = 65534;
+
+	cmd->cmd = AICA_CMD_CHAN;
+	cmd->timestamp = 0;
+	cmd->size = AICA_CMDSTR_CHANNEL_SIZE;
+	cmd->cmd_id = data->chn;
+
+	chan->cmd = AICA_CH_CMD_UPDATE | AICA_CH_UPDATE_SET_FREQ | AICA_CH_UPDATE_SET_PAN | AICA_CH_UPDATE_SET_VOL;
+	chan->base = t->locl;
+	chan->type = t->fmt;
+	chan->length = size;
+
+	chan->loop = data->loop;
+	chan->loopstart = data->loopstart;
+	chan->loopend = data->loopend ? data->loopend : size;
+	chan->freq = data->freq > 0 ? data->freq : t->rate;
+	chan->vol = data->vol;
+	chan->pan = data->pan;
+
+	snd_sh4_to_aica(tmp, cmd->size);
+}
+
 typedef struct {
 	int8_t *samples;
 	uint32_t len;

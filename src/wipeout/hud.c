@@ -321,7 +321,7 @@ void hud_draw(ship_t *ship) {
 	// Framerate
 	if (save.show_fps) {
 		ui_draw_text("FPS", ui_scaled(vec2i(16, 78)), UI_SIZE_8, UI_COLOR_ACCENT);
-		ui_draw_number((int)(g.frame_rate), ui_scaled(vec2i(16, 90)), UI_SIZE_8, UI_COLOR_DEFAULT);
+		ui_draw_number((int)(g.frame_rate) > 60 ? 60 : (int)(g.frame_rate), ui_scaled(vec2i(16, 90)), UI_SIZE_8, UI_COLOR_DEFAULT);
 	}
 
 #define DRAW_SECTION_NUM 0

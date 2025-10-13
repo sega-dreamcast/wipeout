@@ -48,7 +48,7 @@ Object *objects_load(char *name, texture_list_t tl) {
 	void *mark_it = mem_mark();
 	(void)mark_it;
 
-	Object *objectList;
+	Object *objectList = NULL;
 	Object *prevObject = NULL;
 
 	while (p < length) {

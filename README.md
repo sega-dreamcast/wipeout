@@ -1,6 +1,6 @@
 ***
 
-# Wipeout-Rewrite port for Dreamcast (updated 2025/07/13)
+# Wipeout-Rewrite port for Dreamcast (updated 2025/10/13)
 
 ***
 Wipeout-DC is a port of the Wipeout Rewrite project by Dominic Szablewski which can be found at:
@@ -9,9 +9,9 @@ https://github.com/phoboslab/wipeout-rewrite
 ***
 
 ***
-This is the seventh bug-fix/update release for v2. I took some time to rebalance the volumes and make a new CDI.
+This is the 9th bug-fix/update release for v2. It no longer requires custom KOS to be built.
 
-If you have cloned/built Wipeout prior to 2025/05/18, you will need to unpack and rebuild the custom KOS included as it has changed (Wipeout-DC code won't build anymore if you don't).
+If you have cloned/built Wipeout prior to 2025/10/13, you will need to grab a fresh copy of KOS `v2.2.1` tag from the official repo.
 
 Current feature set includes: Extended draw distance, 16:9 anamorphic widescreen available,
 
@@ -27,7 +27,7 @@ VMU save/load for settings and high scores (6 blocks required), full input remap
 ***
 Go to the `Releases` section of the Github repo. A `7z` file is provided with `CDI`.
 
-https://github.com/jnmartin84/wipeout-dc/releases/tag/v2.7
+https://github.com/jnmartin84/wipeout-dc/releases/tag/v2.9
 
 Note that playing in emulation is not supported. If you run into trouble and need a solution, buy a Dreamcast.
 
@@ -71,9 +71,9 @@ enable Rapier Class and bonus circuit.
 ***
 Setup Dreamcast compiler.
 
-Unpack `wipeout_kos.tgz` , rename the resultant `wipeout_kos` directory to `kos` and move it to `/opt/toolchains/dc` 
+Clone KOS from the official repo. Check out the `v2.2.1` tag.
 
-Build this custom KOS.
+Build KOS.
 
 From `wipeout-rewrite` repo directory, run `make` followed by `make cdi` or `make dcload` depending on how you are playing.
 

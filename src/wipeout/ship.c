@@ -1036,6 +1036,7 @@ bool ship_intersects_ship(ship_t *self, ship_t *other) {
 				poly.gt3++;
 				break;
 			default:
+				p1 = p2 = p3 = (vec3_t){0,0,0};
 				break;
 		}
 
