@@ -9,11 +9,11 @@ https://github.com/phoboslab/wipeout-rewrite
 ***
 
 ***
-This is the 9th bug-fix/update release for v2. It no longer requires custom KOS to be built.
+This is the final release for v2. It no longer requires custom KOS to be built.
 
 If you have cloned/built Wipeout prior to 2025/10/13, you will need to grab a fresh copy of KOS `v2.2.1` tag from the official repo.
 
-Current feature set includes: Extended draw distance, 16:9 anamorphic widescreen available,
+Current feature set includes: 24-bit color depth, extended draw distance, 16:9 anamorphic widescreen available,
 
 reimplemented screen shake, restored PSX-original collision behavior, more.
 
@@ -27,7 +27,7 @@ VMU save/load for settings and high scores (6 blocks required), full input remap
 ***
 Go to the `Releases` section of the Github repo. A `tgz` file is provided with `CDI` and some cover art in various formats.
 
-https://github.com/jnmartin84/wipeout-dc/releases/tag/v2.9
+https://github.com/jnmartin84/wipeout-dc/releases/tag/v2-final
 
 Note that playing in emulation is not supported. If you run into trouble and need a solution, buy a Dreamcast.
 

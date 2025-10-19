@@ -350,7 +350,8 @@ uint32_t platform_store_userdata(const char *name, void *bytes, int32_t len) {
 extern	vec2i_t screen_size;
 
 void platform_video_init(void) {
-	; //
+	// wonderful banding-free dithering-free 24-bit color
+	vid_set_mode(DM_640x480, PM_RGB888);
 }
 
 void platform_video_cleanup(void) {
